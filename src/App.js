@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import Cards from './components/Cards/Cards'
+import Nav from './components/Nav/Nav'
+import About from './components/About/About'
+import Detail from './components/Detail/Detail'
+import Form from './components/Form/Form'
+import { useEffect, useState } from 'react'
+import styles from './App.module.css'
+import { Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 
-function App() {
+function App () {
+
+  //! HOOKS
+  const [characters, setCharacters] = useState([]);
+  const {pathname} = useLocation();
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    !access && navigate('/')
+  }, [access]);
+
+
+  //! CREDENCIALES FAKES
+  const username = 'chinardo@email.com';
+  const password = 'chinardo10';
+
+
+  //! FUNCIONES
+  function onSearch(id) {
+    const URL_BASE = 'https://be-a-rym.up.railway.app/api';
+    const KEY = '3e8950feeb2e.eebbc02f058e931a9228';
+
+    fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.name && !characters.find((char) => char.id === data.id)) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+            window.alert('No hay personajes con ese ID');
+        }
+    });
+  }
+
+  const onClose = (id) => {
+    setCharacters(characters.filter((chars) => chars.id !== id))
+  }
+  
+  const login = (data) => {
+    if (data.username === username && data.password === password) {
+      setAccess(true);
+      navigate('/home');
+    } else {
+      alert('Datos incorrectos')
+    }
+  };
+
+
+  //!APP
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+    {pathname !== '/' && <Nav onSearch={onSearch} />}
+    <Routes>
+      <Route path='/' element= {<Form login={login} />} />
+      <Route path='/home' element={<Cards characters={characters} onClose = {onClose}/>} />
+      <Route path='/about' element={<About />} />
+      <Route path='/detail/:id' element={<Detail />}/>
+    </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
