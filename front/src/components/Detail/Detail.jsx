@@ -6,8 +6,7 @@ function Detail (){
     const {id} = useParams();
     const [character, setCharacter] = useState({});
 
-    const URL_BASE = 'http://localhost:3001/rickandmorty/';
-    // const KEY = '3e8950feeb2e.eebbc02f058e931a9228';
+    const URL_BASE = 'http://localhost:3001';
 
     useEffect(() => {
         fetch(`${URL_BASE}/detail/${id}`)

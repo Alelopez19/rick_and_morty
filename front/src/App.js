@@ -28,8 +28,7 @@ function App () {
 
   //! FUNCIONES
   function onSearch(id) {
-    const URL_BASE = 'http://localhost:3001/rickandmorty';
-    // const KEY = '3e8950feeb2e.eebbc02f058e931a9228';
+    const URL_BASE = 'http://localhost:3001';
 
     fetch(`${URL_BASE}/onsearch/${id}`)
     .then((response) => response.json())
