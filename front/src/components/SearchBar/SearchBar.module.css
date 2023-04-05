@@ -6,7 +6,8 @@
     color: greenyellow;
     background-color: black;
     border-radius: 5px;
-    border: 1px solid greenyellow
+    border: 1px solid greenyellow;
+    font-family: monospace;
 }
 .btn:hover{
     color: rgb(0, 194, 194);

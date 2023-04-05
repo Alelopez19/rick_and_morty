@@ -17,10 +17,10 @@ const SearchBar = (props) => {
    return (
       <>
          <div>
-            <button className={styles.btn} onClick={() => {props.onSearch(numRandom())}}>Carta Aleatoria</button>
+            <button className={styles.btn} onClick={() => {props.onSearch(numRandom())}}>CARTA ALEATORIA</button>
          </div>
          <input type='search' className={styles.input} onChange={handleChange} />
-         <button className={styles.btn} onClick={ () => {props.onSearch(id)}}>Agregar</button>
+         <button className={styles.btn} onClick={ () => {props.onSearch(id)}}>AGREGAR</button>
       </>
    );
 }

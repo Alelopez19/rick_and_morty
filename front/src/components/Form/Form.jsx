@@ -30,8 +30,8 @@ const Form = ({login}) => {
 
 
     return(
-        <form className={styles.form} onSubmit={handlerSubmit} >
-            <div className={styles.div} >
+        <form className={styles.formulario} onSubmit={handlerSubmit} >
+            <div className={styles.username} >
                 <label htmlFor='username' className={styles.label} >Username: </label>
                 <input type = 'text' 
                 name = 'username' 
@@ -41,8 +41,8 @@ const Form = ({login}) => {
                 className = {errors.username ? styles.mal : styles.bien} />
                 <p className={styles.span}> {errors.username}</p>
             </div>
-            <div className={styles.div} >
-                <label htmlFor='password' className={styles.label} >Password: </label>
+            <div className={styles.password} >
+                <label htmlFor='password' className={styles.label} >Password:</label>
                 <input 
                 type = 'text' 
                 name = 'password' 
@@ -52,9 +52,7 @@ const Form = ({login}) => {
                 className = {errors.username ? styles.mal : styles.bien}/>
                 <p className={styles.span}>{errors.password}</p>
             </div>
-            <div>
                 <button className={styles.btn} >LOGIN</button>
-            </div>
         </form>
     )
 

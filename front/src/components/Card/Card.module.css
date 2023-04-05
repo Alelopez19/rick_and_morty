@@ -1,7 +1,7 @@
 .divCarta {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    margin-bottom: 1em;
     padding: 1em;
     background-image: url(../img/FondoCarta.png);
     background-position: center center;
@@ -21,7 +21,8 @@
     box-shadow: 3px 5px 10px black;
     background-color: rgb(165, 255, 29);
     background-position: center center;
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
+    font-family: monospace;
 }
 
 .buttonX {
@@ -30,7 +31,6 @@
     margin-left: 95%;
     box-shadow: 1px 3px 3px black;
     background-color: greenyellow;
-    color: black
 }
 .buttonX:hover{
     background-color: red;

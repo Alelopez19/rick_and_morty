@@ -1,51 +1,61 @@
-.form{
+.formulario{
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    border: 1px solid greenyellow;
+    position: relative;
+    left: 30%;
+    padding: 5px;
+    width: 40%;
+    border: 2px solid greenyellow;
     border-radius: 10px;
     background-color: black;
 }
 
-.div{
+.password{
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin: 5px;
-    justify-content: center;
+    margin: 10px;
     border: 1px solid white;
+    background-color: black;
 
+}
+.username{
+    display: flex;
+    margin: 10px;
+    border: 1px solid white;
+    background-color: black;
 }
 
 .label{
+    display: flex;
+    width: 30%;
+    padding: 5px;
     color: greenyellow;
-    font-size: x-large;
-    font-weight: 500;
-    margin: 5px;
+    font-size: x-large; 
+    margin: 3px;
+    font-family: cursive;
 }
 
 .bien{
-    padding: 5px;
     border: 2px solid rgb(0, 177, 0);
-    border-radius: 2px;
     background-color: rgb(189, 255, 189);
+    border-radius: 5px;
 }
 
 .mal{
-    padding: 5px;
     border: 2px solid red;
-    border-radius: 2px;
     background-color: rgb(255, 190, 190);
+    border-radius: 5px;
 }
 .span{
     color: greenyellow;
 }
 
 .btn{
-    width: fit-content;
+    display: flex;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
+    align-self: center;
+    width: fit-content;
+    font-family: cursive;
     color: greenyellow;
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
