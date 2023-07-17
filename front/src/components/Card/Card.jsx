@@ -44,7 +44,7 @@ function Card({ id, name, species, gender, image, onClose, myFavorites}) {
          (<button onClick={handleFavorite} className={styles.corazon} >🤍</button>)}
          <button className={styles.buttonX} onClick={() => onClose(id)}>X</button>
          <h2 className={styles.h2} > 
-         <Link to={`/detail/${id}`}>{name}</Link>
+         <Link to={`/detail/${id}`}>{id}-{name}</Link>
          </h2>
          <img className={styles.img} src={image} alt="" />
          <h2 className={styles.h2} > {species} </h2>
