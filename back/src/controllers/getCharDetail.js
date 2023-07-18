@@ -4,7 +4,7 @@ const {KEY, URL_BASE} = process.env;
 const getCharDetail = (req, res) => {
     const {id} = req.params;
 
-    axios.get(`${URL_BASE}/character/${id}?key=${KEY}`)
+    axios.get(`${URL_BASE}/character/${id}`)
     .then(response => {
         const {id,name,gender,species,origin, image} = response.data;
         res.status(200).json({id,name,gender,species,origin, image})})
